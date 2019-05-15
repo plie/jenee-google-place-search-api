@@ -1,4 +1,4 @@
-class ShortlinksController < ApplicationRecord
+class ShortlinksController < ApplicationController
 
 
   def new
