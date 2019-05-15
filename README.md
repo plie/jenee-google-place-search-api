@@ -1,7 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 2.4.1
+
+Starting this project with implementation of a URL shortener.
+* implement bootstrap for responsive and convenient front end components
+* implement new resource: shortlink (new, create, show, redirect, and maybe index for special report based on recent use
+one shortlink instance has multiple attributes: original_url, shortened_url, email, 
+
+
+
+
 
 Things you may want to cover:
 
