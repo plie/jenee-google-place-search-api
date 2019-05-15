@@ -2,7 +2,7 @@ class ShortlinksController < ApplicationController
 
 
   def new
-    @shortlink = Shortlink.new
+    # @shortlink = Shortlink.new
   end
 
   def create
