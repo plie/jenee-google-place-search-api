@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class ShortlinksController < ApplicationController
 
 
@@ -21,3 +23,5 @@ class ShortlinksController < ApplicationController
   end
 
 end
+
+SecureRandom.alphanumeric(6)
