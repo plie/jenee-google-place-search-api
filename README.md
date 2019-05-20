@@ -1,6 +1,6 @@
 # README
 
-* Ruby version 2.4.1
+* Ruby version 2.5.5
 
 Starting this project with implementation of a URL shortener.
 
