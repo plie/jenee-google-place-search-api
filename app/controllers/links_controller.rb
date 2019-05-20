@@ -9,7 +9,7 @@ class LinksController < ApplicationController
     end
 
     if @shortlink
-        redirect_to @shortlink.original_url #### does this work?
+        redirect_to @shortlink.original
     else
       flash[:error] = 'Short link not found. Please try again'
       redirect_to 'search'  # how to do this?

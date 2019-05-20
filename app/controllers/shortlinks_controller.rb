@@ -11,7 +11,7 @@ class ShortlinksController < ApplicationController
     @shortlink.shortened = SecureRandom.alphanumeric(6)
     if @shortlink.save!
       flash[:info] = 'Short link created'
-      redirect_to show_path
+      redirect_to shortlink_path(@shortlink)
     else
       flash[:info] = 'Your shortened link did not get created, please try again.'
       render 'back'
@@ -19,7 +19,7 @@ class ShortlinksController < ApplicationController
   end
 
   def show
-    @shortlink = Shortlink.find(params[:shortlink][:shortened])
+    @shortlink = Shortlink.find(params[:id])
   end
 
   def search

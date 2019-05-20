@@ -1,10 +1,14 @@
 <h3>Convert your URL to a shortlink:</h3>
 
-<% form_for @shortlink do |f| %>
+<%= form_for @shortlink do |f| %>
   <p>
+    <%= f.label "Your email:" %>
     <%= f.text_field :email %>
+    <%= f.label "URL to shorten:" %>
     <%= f.text_field :original %>
     <%= f.submit "Create" %>
   </p>
 <% end %>
+
+
 
