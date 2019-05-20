@@ -1,3 +1,5 @@
+<br>
+<br>
 <h3>Search for your URL</h3>
 
 
@@ -16,15 +18,31 @@
     <%= text_field_tag :shortened %>
   </p>
   <p>
-    <%= submit_tag "Search", class: 'btn btn-primary' %>
+    <%= submit_tag "Search", class: 'btn btn-success' %>
   </p>
 <% end %>
 
+<br>
+<br>
 <% if @shortlinks %>
-  <p> yo adrian! </p>
-  <%= @shortlinks.each do |link| %>
-    <%= link.email %>
-    <%= link.original %>
-    <%= link.shortened %>
-  <% end %>
+  <h3>Saved Short links</h3>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Original URL</th>
+        <th scope="col">Short link slug</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shortlinks.each do |link| %>
+        <tr>
+          <td><%= link.email %></td>
+          <td><%= link.original %></td>
+          <td><%= link_to "#{link.shortened}", "/#{link.shortened}", :target => "_blank" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>

@@ -4,3 +4,5 @@
 <p>Email: <%= @shortlink.email %></p>
 <p>Opens new page at: <%= @shortlink.original %></p>
 <p>Full shortlink: https://jenee-google-place-search-api.herokuapp.com/<%= @shortlink.shortened %></p>
+
+<p><%= link_to "Search", shortlinks_path, class: 'btn btn-success' %></p>

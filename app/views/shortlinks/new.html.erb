@@ -1,4 +1,5 @@
-<h3>Convert your URL to a shortlink:</h3>
+<br>
+<h3>Convert your URL to a short link:</h3>
 
 <br>
 <%= form_for @shortlink do |f| %>
@@ -13,3 +14,8 @@
     <%= f.submit "Create", class: 'btn btn-primary' %>
   </p>
 <% end %>
+
+<br>
+<h3>Search for a saved short link:</h3>
+<br>
+<p><%= link_to "Search", shortlinks_path, class: 'btn btn-success' %></p>
