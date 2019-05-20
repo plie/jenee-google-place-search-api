@@ -10,10 +10,10 @@ class ShortlinksController < ApplicationController
     @shortlink = Shortlink.new(shortlink_params)
     @shortlink.shortened = SecureRandom.alphanumeric(6)
     if @shortlink.save!
-      flash[:info]("Short link created")
+      flash[:info] = 'Short link created'
       redirect_to show_path
     else
-      flash[:info]("Your shortened link did not get created, please try again.")
+      flash[:info] = 'Your shortened link did not get created, please try again.'
       render 'back'
     end
   end
