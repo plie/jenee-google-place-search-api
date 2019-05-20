@@ -1,2 +1,10 @@
 <h3>Convert your URL to a shortlink:</h3>
 
+<% form_for @shortlink do |f| %>
+  <p>
+    <%= f.text_field :email %>
+    <%= f.text_field :original_url %>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+

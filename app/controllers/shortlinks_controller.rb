@@ -2,26 +2,37 @@ require 'securerandom'
 
 class ShortlinksController < ApplicationController
 
-
   def new
-    # @shortlink = Shortlink.new
+    @shortlink = Shortlink.new
   end
 
   def create
     @shortlink = Shortlink.new(shortlink_params)
+    @shortlink.shortened = SecureRandom.alphanumeric(6)
+    if @shortlink.save!
+      flash[:info]("Short link created")
+      redirect_to show_path
+    else
+      flash[:info]("Your shortened link did not get created, please try again.")
+      render 'back'
+    end
   end
 
   def show
-    @shortlink = Shortlink.find(params[:id])
+    @shortlink = Shortlink.find(params[:shortlink][:shortened])
   end
 
+  def search
+    @shortlink = Shortlink.new
+  end
+
+  def search_results
+    @shortlink = Shortlink.find(params[:shortlink][:original])
+  end
 
   private
 
   def shortlink_params
-    params.require(:shortlink).permit(:original_url, :shortened_url, :email)
+    params.require(:shortlink).permit(:original, :shortened, :email)
   end
-
 end
-
-SecureRandom.alphanumeric(6)
