@@ -1,5 +1,6 @@
-<h3>This is your shortlink</h3>
+<h3>Here is your shortlink info:</h3>
 
-<p><%= link_to "https://jenee-google-place-search-api.herokuapp.com/#{@shortlink.shortened}", "https://jenee-google-place-search-api.herokuapp.com/#{@shortlink.shortened}", :target => "_blank" %></p>
-<p><%= @shortlink.email %></p>
-<p><%= @shortlink.original %></p>
+<p>Short link: <%= link_to "#{@shortlink.shortened}", "/#{@shortlink.shortened}", :target => "_blank", class: 'btn btn-primary' %></p>
+<p>Email: <%= @shortlink.email %></p>
+<p>Opens new page at: <%= @shortlink.original %></p>
+<p>Full shortlink: https://jenee-google-place-search-api.herokuapp.com/<%= @shortlink.shortened %></p>
