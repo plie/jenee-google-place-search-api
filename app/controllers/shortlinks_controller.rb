@@ -25,7 +25,7 @@ class ShortlinksController < ApplicationController
   def index
     Rails.logger.info("Now in index action")
     if params[:email]
-      if params[:shortened]
+      if params[:shortened].present?
         Rails.logger.info("Now in the if of the index action")
         @shortlinks = Shortlink.where('shortened = (?)', params[:shortened]).where('email = (?)', params[:email])
       else
